@@ -35,6 +35,7 @@ def render_msg(item):
     msg = msg + item["title"] + "\n\n"
     msg = msg + h.handle(item["description"]).strip() + "\n\n"
     msg = msg + "Ссылка: " + item["link"]
+    msg = msg.replace("&gt;", ">").replace("&lt;", "<").replace("\-", "—")
     return msg
 
 def show_help():
